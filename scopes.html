@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        var nome = 'Michel';
+        console.log(nome);
+
+        function imprimeNome(nome) {
+            console.log(nome);
+            var idade = 21;
+        }
+        //console.log(idade);
+
+        // Erro! Sem var, pais se torna uma variável global mesmo dentro da function. Use o var.
+        function imprimePais() {
+            pais = 'Brasil';
+            console.log(pais);
+        }
+
+        imprimePais();
+        console.log(pais);
+        console.log(this.pais);
+        console.log(window.pais);
+
+        // this - escope dinâmico dinâmico. Evite!
+        function imprimeThis() {
+            console.log(this);
+        }
+
+        function imprimeMensagem() {
+            imprimeThis.call('Olá Mundo');
+        }
+
+        function imprimeMensagem2() {
+            imprimeThis.call(['Olá Mundo', 'Hello Mundo']);
+        }
+
+        imprimeMensagem();
+        imprimeMensagem2();
+
+        // Enquanto var restrinje o escopo de uma variável a nível de function,
+        // let permite que vc restrinja a nível de bloco.
+        function imprimeCanal(params) {
+            if (true) {
+                var youtube = 'programador a bordo';
+                let autor = 'Michel';
+                console.log(youtube, autor);   
+            }
+            // let é exergada apenas dentro do bloco, enquanto o var em toda a função.
+            //console.log(youtube, autor);
+            console.log(youtube);
+        }
+        imprimeCanal();
+    </script>
+</body>
+
+</html>

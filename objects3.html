@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        var usuarioFunction = {
+            nome: 'Michel',
+            idade: 35,
+            pais: 'Brasil',
+            sexo: 'M'
+        }
+
+        props = Object.keys(usuarioFunction);
+
+        for (let i = 0; i < props.length; i++) {
+            console.log(1, props[i], usuarioFunction[props[i]]);
+        }
+
+        for (var prop of props) {
+            console.log(2, usuarioFunction[prop]);
+        }
+
+        for (const key in usuarioFunction) {
+            if (usuarioFunction.hasOwnProperty(key)) {
+                console.log(3, usuarioFunction[key]);
+            }
+        }
+    </script>
+</body>
+</html>

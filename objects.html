@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        var usuario = {
+            nome: 'Michel',
+            idade: 26,
+            profissao: 'Programador'
+        }
+
+        console.log(1, usuario);
+        console.log(2, usuario.nome);
+        console.log(3, usuario['idade']);
+
+        usuario.ano = 2019;
+        console.log(4, usuario);
+        delete usuario.idade;
+        console.log(5, usuario);
+        usuario.hobbies = ['música', 'viajar'];
+        console.log(6, usuario);
+        usuario.competencias = {
+            instrumentos: ['clarineta', 'sax', 'flauta'],
+            linguagens: ['C#', 'JavaScript']
+        }
+        console.log(7, usuario);
+
+        var cor = 'verde';
+        var usuario2 = {
+            dizerOi: function (nome) {
+                return `Olá ${nome}`;
+            },
+            sayHello(nome) {
+                return `Hello ${nome}`;
+            },
+            cor // == cor: cor;
+        }
+        console.log(8, usuario2.dizerOi('Michel'), usuario2.sayHello('Michel'), usuario2.cor);
+
+
+        var usuario3 = {
+            nome: 'Michel',
+            idade: 35
+        }
+
+        var endereco = {
+            rua: 'Bonifácio de Abreu',
+            cidade: 'Itapevi',
+            uf: 'SP'
+        }
+
+        // merge
+        var novoUsuario = Object.assign({}, usuario3, endereco);
+        console.log(9, novoUsuario);
+        // merge spread
+        var novoUsuario2 = {
+            ...usuario3,
+            ...endereco
+        }
+        console.log(10, novoUsuario2);
+
+        // fazer com que o nome da propriedade seja o valor da variável []
+        var nomeVariavel = 'estado';
+        var usuario4 = {
+            nome: 'Michel',
+            [nomeVariavel]: 'SP'
+        }
+        console.log(11, usuario4);
+
+        // getters e setters
+        var usuarios = [
+            {
+                nome: 'Joao',
+                idade: 70
+            },
+            {
+                nome: 'Maria',
+                idade: 50
+            },
+            {
+                nome: 'Jose',
+                idade: 45
+            }]
+        console.log(12, usuarios);
+        console.log(13, usuarios[1].nome);
+
+        var gerenciadorUsuarios = {
+            posicao: 0,
+            get atual() { return usuarios[this.posicao] },
+            set atual(pos) { this.posicao = pos },
+            proximo() { ++this.posicao },
+            anterior() { --this.posicao },
+        }
+
+        console.log(14, gerenciadorUsuarios.atual);
+        gerenciadorUsuarios.proximo();
+        console.log(15, gerenciadorUsuarios.atual);
+        gerenciadorUsuarios.anterior();
+        console.log(16, gerenciadorUsuarios.atual);
+        gerenciadorUsuarios.atual = 2;
+        console.log(17, gerenciadorUsuarios.atual);
+    </script>
+</body>
+
+</html>

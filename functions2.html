@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        // this
+        // aqui this vale window, obj principal do browser
+        console.log(1, this);
+
+        // aqui this vale o objeto que representa a function
+        function usuario() {
+            console.log(2, this);
+        }
+
+        new usuario();
+
+        function usuario2() {
+            this.nome = 'Michel';
+            this.idade = 35,
+                this.somar = function (a, b) {
+                    return a + b;
+                }
+        }
+        console.log(3, new usuario2());
+
+        var usu = new usuario2();
+        console.log(4, usu.nome, usu.idade);
+
+        function obterPersonagem(p1, p2) {
+            console.log(5, this, p1, p2);
+        }
+
+        var personagem = { nome: 'Batman', endereco: 'Gothan' }
+        obterPersonagem.call(personagem, 1, 2)
+        obterPersonagem.apply(personagem, [1, 5])
+
+        var obterPersonagemBind = obterPersonagem.bind(personagem, 'Olá')
+        obterPersonagemBind("Mundo");
+
+        // Arrow functions
+        var soma = (a, b) => {
+            return a + b
+        }
+        var soma2 = (a, b) => a + b
+        console.log(6, soma(1, 2), soma2(5, 6))
+
+        var retonarUsuario = () => ({ nome: 'Michel', idade: 35 });
+        console.log(7, retonarUsuario())
+        // Com um único parâmetro
+        var retonarUsuario = cidade => ({ nome: 'Michel', idade: 35, cid: cidade });
+        console.log(8, retonarUsuario('Sampa'))
+    </script>
+</body>
+
+</html>

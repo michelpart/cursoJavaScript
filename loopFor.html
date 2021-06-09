@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        console.log('simples');
+        for (let contador = 0; contador < 10; contador++) {
+            console.log(contador);
+        }
+
+        var numerosAleatorios = [1, 5, 74, 4, 12, 44, 25];
+
+        console.log('incremento com valores do array');
+        for (let contador = 0; contador < numerosAleatorios.length; contador++) {
+            console.log(`${contador} - ${numerosAleatorios[contador]}`);
+        }
+
+        console.log('decremento com valores do array');
+        for (let contador = numerosAleatorios.length - 1; contador >= 0; contador--) {
+            console.log(`${contador} - ${numerosAleatorios[contador]}`);
+        }
+
+        console.log('sem valor inicial e incremento');
+        var i = 0;
+        for (; i < numerosAleatorios.length;) {
+            console.log(`${i} - ${numerosAleatorios[i]}`);
+            i++;
+        }
+
+        console.log('condição booleana');
+        var i = 1;
+        var condicao = true;
+        for (; condicao;) {
+            if(i % 5 === 0)
+                condicao = false;
+            console.log(`condição booleana simples ${i}`);
+            i++;
+        }
+
+        console.log('for of');
+        for (var num of numerosAleatorios) {
+            console.log(num);
+        }
+
+        console.log('for aninhado');
+        for (let i = 1; i <= 5; i++) {
+            console.log(`iteração principal ${i}`);
+            for (let j = 1; j <= 10; j++) {
+                console.log(`iteração filha ${j}`);
+            }
+        }
+    </script>
+</body>
+
+</html>

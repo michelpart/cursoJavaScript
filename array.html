@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        var numeros = [5, 13, 12, 17, 99];
+        console.log(numeros);
+        console.log(numeros[2]);
+        console.log(numeros.length);
+        console.log(numeros.indexOf(12));
+
+        console.log(numeros.slice(1, 4));
+        console.log(numeros.slice(2));
+
+        var valorRemovido = numeros.pop();
+        console.log('Valor Removido', valorRemovido);
+        console.log(numeros);
+
+        console.log(numeros.join('---'));
+
+        var usuario = ['Michel', 35, 'SP', 'Brasileiro', 'Programador']
+        console.log(usuario);
+
+        console.log(usuario.includes('Brasileiro'));
+        console.log(usuario.includes('Japonês'));
+        console.log(usuario.indexOf('Brasileiro'));
+        console.log(usuario.indexOf('Japonês'));
+
+        var nome = usuario[0];
+        var idade = usuario[1];
+        var uf = usuario[2];
+        console.log(nome, idade, uf);
+
+        // Array destructuring. Declaro a variável já atribuindo o valor do array, de acordo com a posição.
+        var [, , , pais, profissao] = usuario
+        console.log(nome, idade, uf, pais, profissao);
+
+		// Concat
+        var arr1 = [3, 2, 1];
+        var arr2 = ['Michel', 'Sacramento'];
+        var arr3 = [6, 5, 4];
+
+        var resultado = arr1.concat(arr2);
+        console.log(2, resultado);
+
+        resultado = arr1.concat(arr2, arr3, ['Programador', 'Analista']);
+        console.log(33,resultado);
+
+        console.log([arr1, arr2, arr3]);
+        console.log([...arr1, ...arr2, ...arr3]);
+
+    </script>
+</body>
+
+</html>

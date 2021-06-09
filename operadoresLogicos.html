@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            var a = true;
+            var b = false;
+            console.log('Valores iniciais, a = true e b = false');
+            console.log('!a', !a);
+            console.log('!b', !b);
+            console.log('!!a', !!a);
+            console.log('!!b', !!b);
+
+            // Valores que representam false -> false, null, '', undefined e 0.
+            console.log('!!null', !!null);
+            console.log('!undefined', !undefined);
+            console.log('false == null', false == null);
+            console.log('!!false == !!null', !!false == !!null);
+
+            // Se todas forem verdairas, retorna a última. Senão, retorna a primeira que deu false.
+            console.log('Programador' && 12 && 'Michel');
+            console.log('Programador' && 0 && 'Michel');
+            console.log(7 < 10 && 5 < 6);
+
+            // Se uma for verdadeira, retorna o seu valor. Se todas forem falsas, retorna o valor da última.
+            console.log('Programador' || 0 || 'Michel');
+            console.log('' || 0 || false || undefined);
+            console.log(7 < 10 || 5 < 6);
+        </script>
+    </body>
+</html>

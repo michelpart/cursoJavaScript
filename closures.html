@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        // Closure - memorização do scopo de criação
+        function imprimirNome() {
+            let nome = 'Michel';
+            return function (params) {
+                return nome + ' Gabriel';
+            }
+        }
+
+        var func = imprimirNome();
+        console.log(func());
+
+        function minhaBiblioteca() {
+            function auxiliar(valor) {
+                return 10 + valor;
+            }
+
+            return {
+                add5() { return auxiliar(5) },
+                add7() { return auxiliar(7) },
+            }
+        }
+
+        var biblioteca = minhaBiblioteca();
+        console.log(biblioteca.add5(), biblioteca.add7());
+
+        function inicializa() {
+            console.log('primeiro');
+            let nome = 'Michel';
+            setTimeout(imprimeNome(nome), 1000);
+        }
+
+        function imprimeNome(nome) {
+            // return function() {
+            //     console.log(nome);    
+            // }
+            return () => console.log(nome);
+        }
+        inicializa();
+    </script>
+</body>
+
+</html>

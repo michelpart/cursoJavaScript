@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        // parâmetros
+        function escrever(params) {
+            console.log(params);
+        }
+        escrever('Olá');
+        escrever('Olá2');
+
+        // somar
+        function somar(a, b) {
+            return a + b;
+        }
+        console.log(somar(10, 5));
+
+        // somar array
+        function somarArray(numeros) {
+            var a = 0;
+            for (const num of numeros) {
+                a += num;
+            }
+
+            return a;
+        }
+        var numeros = [10, 2, 1, 6];
+        console.log(somarArray(numeros));
+
+        // parâmetros rest ...
+        function escreverEndereco(rua, cidade, pais, ...complementos) {
+            console.log(13, rua, cidade, pais, complementos);
+        }
+        escreverEndereco('Rua 5', 'Itapevi', 'Brasil', '06654-000', 'Casa');
+
+        // autoexecutável
+        (function autoExecutar(nome) {
+            console.log(`função autoexecutável ${nome}`);
+        }('Michel'))
+
+        // função em variável
+        var subtraiDoisNumeros = function (a, b) {
+            return a - b;
+        }
+        console.log(subtraiDoisNumeros(10, 6));
+
+        // função callback
+        function somarCallback(a, b, fnCallBack) {
+            return fnCallBack(a + b);
+        }
+
+        function multiplicaPorDois(result) {
+            return result * 2;
+        }
+
+        console.log(somarCallback(10, 6, multiplicaPorDois));
+
+        console.log(somarCallback(10, 6, function (result) {
+            return result + 1;
+        }));
+
+        // valor default
+        function escreverNome(nome = 'sem nome', idade = 'sem idade') {
+            console.log(`nome: ${nome}, idade: ${idade}`);
+        }
+
+        escreverNome();
+        escreverNome('Michel', 35);
+
+    </script>
+</body>
+
+</html>

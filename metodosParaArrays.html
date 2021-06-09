@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        const numeros = [2, 3, 6, 5, 10];
+        let numeros2 = [];
+        console.log(1, numeros);
+
+        for (const i of numeros) {
+            numeros2.push(i * 2);
+        }
+
+        console.log(2, numeros2);
+
+        // .map permite que vc chame um callback para cada item do array, e retorna um novo array.
+        const numero3 = numeros.map(
+            function (numero) {
+                return numero * 3;
+            });
+        console.log(3, numero3);
+
+        const nomes = ['Michel', 'Moisés', 'AURENIS'];
+                          // modo com arrow function.
+        nomes2 = nomes.map(nome => nome.toLowerCase());
+        console.log(4, nomes2);
+
+        // .filter filtra e retorna um novo array.
+        numeros3 = numeros.filter(numero => numero % 2 === 0);
+        console.log(5, numeros3);
+
+        numeros4 = numeros.filter(numero => numero % 2 === 0).map(numero => numero * 2);
+        console.log(6, numeros4);
+
+        // .reduce tb itera sobre array, mas retorna um valor e ñ o array.
+        let soma = numeros.reduce((acumulado, numero) => numero + acumulado, 0);
+        console.log(7, soma);
+
+        // maiores e menores com filter ou com reduce.
+        const pessoas = [
+            {
+                nome:'Michel',
+                idade: 35
+            },
+            {
+                nome:'Moisés',
+                idade: 60
+            },
+            {
+                nome:'Ana',
+                idade: 5
+            }
+        ];
+
+        let maioresFilter = pessoas.filter((obj) => obj.idade > 18);
+        console.log(8, maioresFilter);
+
+
+        let novoArray = pessoas.reduce((acumulado, valor) => 
+        {
+            const maiorOuMenor = valor.idade > 18 ? 'maiores' : 'menores';
+            acumulado[maiorOuMenor].push(valor);
+            return acumulado;
+        }, { maiores:[], menores:[] });
+        console.log(9, novoArray);
+    </script>
+</body>
+
+</html>
